@@ -1,0 +1,43 @@
+<section class="panel panel-info">
+  <header class="panel-heading">
+    <h3>Welcome to short.com</h3> 
+    <h2 class="col-lg-2 col-lg-offset-10">
+    <%= link_to "Analytics", stats_path  %>
+    </h2>
+  </header>
+  <div class="panel-body">
+      <%= form_for @mini_url,url: create_mini_url_path, :html => { :class =>"form-horizontal row-fluid shift_from",remote: true} do |p| %>
+      <form class="form-horizontal" role="form">
+        <div class="form-group">
+         Please enter your URL here
+        </div>
+        <div class="form-group">
+          <div class="col-lg-8">
+            <%= p.text_field :original_url, :class => "form-control ", :placeholder =>"type any url", :data => {:error => "Please Enter url"}, :required => true %>
+            <!-- <span class="help-block with-errors"></span>   -->
+            <button type="submit" class="btn btn-success">Submit 
+            </button>            
+          </div>
+        </div>
+        
+     
+      
+      </form>
+      
+       <% end %>
+  </div>
+</section>
+
+    
+
+
+
+
+
+
+
+
+        
+
+
+

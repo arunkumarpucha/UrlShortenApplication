@@ -1,0 +1,47 @@
+<section class="panel panel-info">
+<% if @all_urls_list.present? %> 
+<header class="panel-heading">
+<h3>Analytics</h3>
+</header>
+
+
+  <% @all_urls_list.each do |mini_url| %> 
+    <section class="panel"> 
+      <div class="panel-body">
+         
+        <div class="fb-user-details">
+         Here's your short URL!
+          <p><b>OriginalUrl:</b> <%= mini_url.original_url %> </p>
+          <% short_url = mini_url.short_url %>
+          <p> <b> MiniUrl: </b><%= link_to "https://short.com/#{short_url}.com", report_analytic_path(:mini_url_id => mini_url.id),
+          :method => "post"  %> </p>
+        </div>
+
+        <div class="clearfix"></div>
+        <div id="analytic_details">
+          <div>
+          <b>Total clicks: </b> <%= mini_url.url_histories.first.click_count rescue 0%>
+          </div>
+          <div>
+          <b>Top countries: </b> <%= mini_url.url_histories.first.countries.join(',') rescue ""%>
+          </div>
+          <div>
+          <b>IpAddresses: </b> <%= mini_url.url_histories.first.ip_addresses.join(',') rescue ""%>
+          </div>
+        </div>
+      </div>                            
+    </section>
+  <% end %>
+<% end %>
+
+</section>
+
+ 
+
+
+
+
+
+
+
+

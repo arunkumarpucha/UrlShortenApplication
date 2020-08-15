@@ -1,0 +1,28 @@
+<% if @mini_urls.present? %> 
+  <% @mini_urls.each do |mini_url| %> 
+    <section class="panel"> 
+      <div class="panel-body">
+         
+        <div class="fb-user-details">
+         Here's your short URL!
+          <p><b>OriginalUrl:</b> <%= mini_url.original_url %> </p>
+          <p> <b> MiniUrl: </b> http://<%= mini_url.short_url %>.com </p>
+        </div>
+        <div class="clearfix"></div>
+        
+      </div>                            
+    </section>
+  <% end %>
+<% end %>
+
+
+
+ 
+
+
+
+
+
+
+
+
